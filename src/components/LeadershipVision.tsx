@@ -83,7 +83,7 @@ export default function LeadershipVision() {
           >
             <CardContent className="px-4">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-neutral-200 text-neutral-700 rounded-lg px-3 text-xs font-medium mb-4 w-[100%] border border-neutral-300">
+              <div className="inline-flex items-center gap-2 bg-neutral-200 text-neutral-700 rounded-lg px-3 py-2 text-xs font-medium mb-4 w-[100%] border border-neutral-300">
                 {card.icon}
                 <span>{card.title}</span>
               </div>
