@@ -16,44 +16,44 @@ export default function LeadershipVision() {
     {
       icon: <Lightbulb className="w-4 h-4" />,
       title: 'Innovation',
-      heading: 'Designing for the next century',
+      heading: 'Shaping modern enterprise',
       description:
-        'From materials to master plans, innovation drives our process and portfolio.',
+        'Integrating creativity with strategy to redefine business and design excellence.',
     },
     {
       icon: <Leaf className="w-4 h-4" />,
       title: 'Sustainability',
-      heading: 'Responsible growth',
+      heading: 'Building a responsible future',
       description:
-        'Adopting energy-efficient strategies and stewardship of local heritage.',
+        'Championing green practices and sustainable architecture through ArmArch.',
     },
     {
       icon: <Award className="w-4 h-4" />,
-      title: 'Recognition',
-      heading: 'Award-winning execution',
+      title: 'Excellence',
+      heading: 'Pioneering with distinction',
       description:
-        'Delivering projects recognized by industry peers and communities.',
+        'Guided by discipline and purpose, achieving milestones that inspire industry growth.',
     },
     {
       icon: <Users className="w-4 h-4" />,
-      title: 'People',
-      heading: 'Cultivating leaders',
+      title: 'Leadership',
+      heading: 'Empowering visionaries',
       description:
-        'Mentoring cross-functional teams to achieve bold outcomes.',
+        'Nurturing talent, collaboration, and innovation across all ventures within the group.',
     },
     {
       icon: <TrendingUp className="w-4 h-4" />,
       title: 'Growth',
-      heading: 'Measured expansion',
+      heading: 'Strategic diversification',
       description:
-        'A disciplined approach to scaling across markets and sectors.',
+        'Expanding Al-Ashraf Group across sectors with analytical insight and global perspective.',
     },
     {
       icon: <Landmark className="w-4 h-4" />,
       title: 'Legacy',
-      heading: 'Enduring value',
+      heading: 'Inspired by heritage',
       description:
-        'Architectural works that age with dignity and purpose.',
+        'Honoring a family tradition of excellence while shaping the architecture of tomorrow.',
     },
   ];
 
@@ -65,7 +65,7 @@ export default function LeadershipVision() {
           Leadership Vision
         </h2>
         <p className="text-sm text-neutral-500 mt-2 sm:mt-0">
-          Principles and achievements that guide our work
+          Core principles that define Dai Ali Daniyal’s leadership and growth philosophy
         </p>
       </div>
 
