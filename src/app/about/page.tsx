@@ -352,7 +352,7 @@ export default function AboutLongFormPage() {
             <div>
               <h3 className="text-2xl font-semibold text-white">Let’s build the future together</h3>
               <p className="text-white/90 mt-2 max-w-xl">
-                For architectural projects, enterprise partnerships, or speaking engagements — reach out and let's
+                For architectural projects, enterprise partnerships, or speaking engagements — reach out and let’s
                 explore how to create lasting value.
               </p>
             </div>
