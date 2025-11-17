@@ -8,18 +8,19 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 
 const data = [
-  {
-    year: '2024 — Regional Expansion',
-    desc: 'Launched cross-border projects with sustainability KPIs.',
-  },
-  {
-    year: '2020 — Executive Program',
-    desc: 'Completed executive leadership coursework in strategy and finance.',
-  },
-  {
-    year: '2016 — ArmArch Founded',
+    {
+    year: '2023 — ArmArch Founded',
     desc: 'Established an architecture studio focused on craft and context.',
   },
+  {
+    year: '2023 — Masters at Hult International',
+    desc: 'Embarked on a Masters in International Business to expand global business insight.',
+  },
+  {
+    year: '2020 — Bachelors at Middlesex University',
+    desc: 'Completed a Business Management (Marketing) degree with international exposure.',
+  },
+
   {
     year: '2010 — Al-Ashraf Group',
     desc: 'Launched the parent company to steward multi-sector growth.',
@@ -33,10 +34,12 @@ const EducationJourney: FC = () => {
 
         <div className="mb-10">
           <h2 className="text-4xl font-semibold text-gray-900">Education & Journey</h2>
+
           <div className="inline-flex items-center gap-2 mt-4 bg-white border border-[#e7dfd6] rounded-full px-4 py-2 text-sm text-gray-700">
             <Calendar size={16} />
             Key Years
           </div>
+
           <p className="text-gray-600 mt-4 max-w-md">
             A curated view of academic foundations and executive milestones.
           </p>

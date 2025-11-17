@@ -1,6 +1,6 @@
 'use client';
 import { FC } from "react";
-import { Building2, DraftingCompass, Landmark, Wallet } from "lucide-react";
+import { Building2, DraftingCompass, UtensilsCrossed, MonitorSmartphone } from "lucide-react";
 
 const AlAshrafGroup: FC = () => {
   return (
@@ -17,7 +17,7 @@ const AlAshrafGroup: FC = () => {
         </div>
 
         <a
-          href="#"
+          href="https://alashrafgoc.com"
           className="bg-white text-[#9b7753] rounded-lg px-4 py-2 flex items-center gap-2 text-sm font-medium hover:opacity-80"
         >
           <span>Visit Group</span>
@@ -25,6 +25,29 @@ const AlAshrafGroup: FC = () => {
       </div>
 
       <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Viral Marketing */}
+        <div className="border rounded-xl p-6">
+          <div className="flex items-center gap-3">
+            <div className="bg-[#9b7753]/15 text-[#9b7753] p-3 rounded-lg">
+              <MonitorSmartphone size={24} />
+            </div>
+            <div className="text-lg font-semibold">Viral Marketing</div>
+          </div>
+
+          <span className="inline-block mt-2 text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
+            Digital Marketing
+          </span>
+
+          <p className="text-gray-600 text-sm mt-3 leading-relaxed">
+            A digital marketing agency crafting high-impact brand strategies, content, and campaigns designed for modern audiences.
+          </p>
+
+          <a href="https://viralmarketingsolution.com" className="mt-6 inline-flex items-center gap-2 bg-[#9b7753] text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium">
+            Learn More →
+          </a>
+        </div>
+
+
         {/* ArmArch */}
         <div className="border rounded-xl p-6">
           <div className="flex items-center gap-3">
@@ -42,51 +65,30 @@ const AlAshrafGroup: FC = () => {
             A studio dedicated to elevated residential and civic architecture, blending craft with advanced engineering.
           </p>
 
-          <a href="#" className="mt-6 inline-flex items-center gap-2 bg-[#9b7753] text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium">
+          <a href="https://armarchengineering.com" className="mt-6 inline-flex items-center gap-2 bg-[#9b7753] text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium">
             Learn More →
           </a>
         </div>
 
-        {/* Ashraf Developments */}
+
+        {/* Cafe Little Karachi */}
         <div className="border rounded-xl p-6">
           <div className="flex items-center gap-3">
             <div className="bg-[#9b7753]/15 text-[#9b7753] p-3 rounded-lg">
-              <Landmark size={24} />
+              <UtensilsCrossed size={24} />
             </div>
-            <div className="text-lg font-semibold">Ashraf Developments</div>
+            <div className="text-lg font-semibold">Cafe Little Karachi</div>
           </div>
 
           <span className="inline-block mt-2 text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
-            Development
+            Hospitality
           </span>
 
           <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-            Integrated development arm delivering premium mixed-use communities with sustainable infrastructure.
+            A vibrant Karachi café offering signature flavors, warm ambience, and a modern take on classic comfort food.
           </p>
 
-          <a href="#" className="mt-6 inline-flex items-center gap-2 bg-[#9b7753] text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium">
-            Learn More →
-          </a>
-        </div>
-
-        {/* Ashraf Capital */}
-        <div className="border rounded-xl p-6">
-          <div className="flex items-center gap-3">
-            <div className="bg-[#9b7753]/15 text-[#9b7753] p-3 rounded-lg">
-              <Wallet size={24} />
-            </div>
-            <div className="text-lg font-semibold">Ashraf Capital</div>
-          </div>
-
-          <span className="inline-block mt-2 text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
-            Investments
-          </span>
-
-          <p className="text-gray-600 text-sm mt-3 leading-relaxed">
-            Strategic capital investments across real estate, hospitality, and technology to accelerate innovation.
-          </p>
-
-          <a href="#" className="mt-6 inline-flex items-center gap-2 bg-[#9b7753] text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium">
+          <a href="https://littlekarachirestaurant.com" className="mt-6 inline-flex items-center gap-2 bg-[#9b7753] text-white px-4 py-2 rounded-lg hover:opacity-90 text-sm font-medium">
             Learn More →
           </a>
         </div>
@@ -96,4 +98,3 @@ const AlAshrafGroup: FC = () => {
 };
 
 export default AlAshrafGroup;
-

@@ -1,8 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-const navItems = ["About", "Vision", "Companies", "Journey", "Gallery", "Contact"];
+const navItems = ["About", "Vision", "Companies", "Podcasts", "Gallery", "Contact"];
+
+const navLinks: Record<string, string> = {
+  About: "/about",
+  Vision: "/vision",
+  Companies: "/companies",
+  Podcasts: "/podcasts",
+  Gallery: "/gallery",
+  Contact: "/contact",
+};
 
 export default function Navbar() {
   return (
@@ -23,9 +33,12 @@ export default function Navbar() {
         <ul className="flex gap-4">
           {navItems.map((item) => (
             <li key={item}>
-              <button className="px-3 py-1.5 rounded-md bg-[#3b2e23] text-white text-sm hover:bg-[#5a4738] transition">
+              <Link
+                href={navLinks[item]}
+                className="px-3 py-1.5 rounded-md bg-[#3b2e23] text-white text-sm hover:bg-[#5a4738] transition"
+              >
                 {item}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>
