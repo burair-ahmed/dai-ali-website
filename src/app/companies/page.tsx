@@ -31,7 +31,7 @@ export default function OurCompanies() {
       category: "Digital Marketing",
       icon: <MonitorSmartphone size={24} />,
       link: "https://viralmarketingsolution.com",
-      color: "#9b7753",
+      color: "#04f9ed",
       tags: ["Founder"],
     },
     {
@@ -41,7 +41,7 @@ export default function OurCompanies() {
       category: "Architecture",
       icon: <DraftingCompass size={24} />,
       link: "https://armarchengineering.com",
-      color: "#9b7753",
+      color: "#e0ac38",
       tags: ["CEO"],
     },
     {
@@ -51,7 +51,7 @@ export default function OurCompanies() {
       category: "Hospitality",
       icon: <UtensilsCrossed size={24} />,
       link: "https://littlekarachirestaurant.com",
-      color: "#9b7753",
+      color: "#741052",
       tags: ["Founder"],
     },
     {
@@ -60,8 +60,8 @@ export default function OurCompanies() {
         "Hosted by Dai Ali Daniyal, exploring insights, stories, and entrepreneurship.",
       category: "Podcast",
       icon: <Mic size={24} />,
-      link: "#",
-      color: "#9b7753",
+      link: "https://www.youtube.com/@TheViralPodcastPk",
+      color: "#1610ea",
       tags: ["Founder"],
     },
     {
@@ -70,8 +70,8 @@ export default function OurCompanies() {
         "A premium housing project delivering modern, sustainable living.",
       category: "Real Estate",
       icon: <Home size={24} />,
-      link: "#",
-      color: "#9b7753",
+      link: "https://indusenclave.com",
+      color: "#c39e76",
       tags: ["CEO"],
     },
   ];
@@ -93,7 +93,7 @@ export default function OurCompanies() {
                 Explore Our Ventures
               </p>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
-                The Companies of Dai Ali Daniyal
+                The Companies Led By Dai Ali Daniyal
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 From architecture to marketing, hospitality, real estate, and
@@ -145,7 +145,7 @@ export default function OurCompanies() {
                   {company.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="bg-[#6b4f3b]/20 text-[#6b4f3b] px-3 py-1 rounded-full text-xs font-medium"
+                      className={`bg-[#6b4f3b]/20 text-[${company.color}] px-3 py-1 rounded-full text-xs font-medium`}
                     >
                       {tag}
                     </span>
