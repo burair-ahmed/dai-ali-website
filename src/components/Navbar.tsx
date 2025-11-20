@@ -5,14 +5,11 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navItems = ["About", "Vision", "Companies", "Podcasts", "Gallery", "Contact"];
-
+const navItems = ["About" , "Companies", "Podcasts", "Contact"];
 const navLinks: Record<string, string> = {
   About: "/about",
-  Vision: "/vision",
   Companies: "/companies",
   Podcasts: "/podcasts",
-  Gallery: "/gallery",
   Contact: "/contact",
 };
 
