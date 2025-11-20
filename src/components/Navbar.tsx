@@ -9,10 +9,10 @@ const navItems = ["About", "Vision", "Companies", "Podcasts", "Gallery", "Contac
 
 const navLinks: Record<string, string> = {
   About: "/about",
-  // Vision: "/vision",
+  Vision: "/vision",
   Companies: "/companies",
   Podcasts: "/podcasts",
-  // Gallery: "/gallery",
+  Gallery: "/gallery",
   Contact: "/contact",
 };
 
