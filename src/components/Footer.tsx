@@ -7,7 +7,7 @@ export default function Footer() {
         <p>© 2025 Dai Ali Daniyal. All rights reserved.</p>
 
         {/* Right Text */}
-        <p className="text-gray-600">Al-Ashraf Group of Companies</p>
+        <p className="text-gray-600">CEO Al-Ashraf Group of Companies</p>
 
       </div>
     </footer>

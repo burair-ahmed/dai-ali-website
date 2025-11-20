@@ -9,10 +9,10 @@ const navItems = ["About", "Vision", "Companies", "Podcasts", "Gallery", "Contac
 
 const navLinks: Record<string, string> = {
   About: "/about",
-  Vision: "/vision",
+  // Vision: "/vision",
   Companies: "/companies",
   Podcasts: "/podcasts",
-  Gallery: "/gallery",
+  // Gallery: "/gallery",
   Contact: "/contact",
 };
 
@@ -20,7 +20,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Close menu if click outside
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -33,29 +32,47 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      initial={{ y: -40, opacity: 0 }}
+      initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 w-full z-50 bg-[#ede9e4]/90 backdrop-blur-md border-b border-gray-200"
+      className="
+        fixed top-0 left-0 w-full z-50 
+        bg-[#f4ece6]/70 backdrop-blur-xl
+        border-b border-[#c7b8a6]/50 
+        shadow-[0_4px_20px_rgba(0,0,0,0.08)]
+      "
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-
+        
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-[#6b4f3b] flex items-center justify-center text-white font-bold">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="
+            w-9 h-9 rounded-xl 
+            bg-[#6b4f3b] shadow-md 
+            flex items-center justify-center 
+            text-white font-bold 
+            transition group-hover:scale-[1.08]
+          ">
             D
           </div>
-          <h1 className="font-semibold text-lg text-[#5a4634]">Dai Ali Daniyal</h1>
+          <h1 className="font-semibold text-lg text-[#4b3a2c]">
+            Dai Ali Daniyal
+          </h1>
         </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-2">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex gap-3">
           {navItems.map((item) => (
             <li key={item}>
               <Link
                 href={navLinks[item]}
-                className="px-3 py-1.5 rounded-lg bg-[#6b4f3b] text-white text-sm 
-                hover:bg-[#5a4738] transition shadow-sm"
+                className="
+                  px-3 py-2 rounded-xl text-sm font-medium
+                  bg-[#7b6044]/20 text-[#4b3a2c]
+                  backdrop-blur-md border border-[#7b6044]/20
+                  hover:bg-[#7b6044] hover:text-white
+                  transition-all duration-300 shadow-sm
+                "
               >
                 {item}
               </Link>
@@ -63,33 +80,40 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Hamburger Button */}
+        {/* Toggle Button */}
         <button
-          className="md:hidden text-[#5a4634]"
+          className="md:hidden text-[#4b3a2c]"
           onClick={() => setMenuOpen((prev) => !prev)}
         >
-          {menuOpen ? <X size={26} /> : <Menu size={26} />}
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Menu Drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             ref={menuRef}
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden bg-[#ede9e4] border-t border-[#d6cfc5] shadow-lg"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="
+              md:hidden bg-[#f4ece6]/90 
+              backdrop-blur-xl border-t border-[#c7b8a6]/50 shadow-xl
+            "
           >
-            <ul className="flex flex-col py-4 px-6 gap-3">
+            <ul className="flex flex-col py-4 px-6 gap-4">
               {navItems.map((item) => (
                 <li key={item}>
                   <Link
                     href={navLinks[item]}
-                    className="block w-full px-4 py-2 text-[#5a4634] bg-white/70 
-                    backdrop-blur-sm rounded-lg shadow-sm hover:bg-[#6b4f3b] hover:text-white transition"
+                    className="
+                      block px-4 py-2 rounded-lg text-[#4b3a2c] text-base
+                      bg-white/70 shadow-sm border border-[#7b6044]/10
+                      hover:bg-[#7b6044] hover:text-white 
+                      transition-all duration-300
+                    "
                     onClick={() => setMenuOpen(false)}
                   >
                     {item}
