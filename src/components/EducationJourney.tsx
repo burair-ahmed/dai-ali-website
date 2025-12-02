@@ -29,29 +29,32 @@ const data = [
 
 const EducationJourney: FC = () => {
   return (
-    <section className="w-full py-20 px-6 md:px-12 lg:px-20 font-inter bg-[#faf7f3]">
+    <section id="journey" className="w-full bg-background px-6 py-20 md:px-12 lg:px-20">
       <div className="max-w-6xl mx-auto">
 
         <div className="mb-10">
-          <h2 className="text-4xl font-semibold text-gray-900">Education & Journey</h2>
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Timeline
+          </p>
+          <h2 className="text-3xl font-semibold text-foreground md:text-4xl">Education & Journey</h2>
 
-          <div className="inline-flex items-center gap-2 mt-4 bg-white border border-[#e7dfd6] rounded-full px-4 py-2 text-sm text-gray-700">
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground">
             <Calendar size={16} />
             Key Years
           </div>
 
-          <p className="text-gray-600 mt-4 max-w-md">
+          <p className="mt-4 max-w-md text-sm text-muted-foreground">
             A curated view of academic foundations and executive milestones.
           </p>
         </div>
 
-        <VerticalTimeline lineColor="#e7dfd6">
+        <VerticalTimeline lineColor="#e1d9d1">
           {data.map((item, i) => (
             <VerticalTimelineElement
               key={i}
               contentStyle={{
                 background: '#ffffff',
-                border: '1px solid #e7dfd6',
+                border: '1px solid #e1d9d1',
                 borderRadius: '16px',
                 boxShadow: 'none',
               }}
@@ -64,13 +67,13 @@ const EducationJourney: FC = () => {
               }}
               icon={<span />}
             >
-              <h3 className="text-gray-900 font-semibold">{item.year}</h3>
-              <p className="text-sm text-gray-600 mt-2">{item.desc}</p>
+              <h3 className="font-semibold text-foreground">{item.year}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>
 
-        <p className="text-right text-sm text-gray-500 mt-10 italic">
+        <p className="mt-10 text-right text-sm italic text-muted-foreground">
           Milestones that shaped a disciplined, global perspective.
         </p>
       </div>

@@ -5,26 +5,26 @@ import { ArrowRight, User } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center bg-gradient-to-b from-gray-200 to-gray-400">
-      <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="flex min-h-screen items-center bg-gradient-to-b from-background via-background to-secondary/60">
+      <div className="mx-auto flex w-full max-w-7xl px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="bg-[#faf8f6]/90 backdrop-blur-sm rounded-3xl shadow-2xl max-w-3xl p-10 md:p-12"
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="max-w-3xl rounded-3xl border border-border bg-card/95 p-10 shadow-2xl backdrop-blur md:p-12"
         >
           {/* Top Subtitle */}
-          <p className="text-sm text-gray-500 mb-3 tracking-wide">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
             CEO • Al-Ashraf Group of Companies
           </p>
 
           {/* Name */}
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          <h2 className="mb-4 text-4xl font-semibold text-foreground md:text-5xl lg:text-6xl">
             Dai Ali Daniyal
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <p className="mb-8 max-w-xl text-base leading-relaxed text-muted-foreground">
             Leadership, architectural vision, and enduring value across regions.
           </p>
 
@@ -34,13 +34,13 @@ export default function Hero() {
               href="#journey"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#6b4f3b] text-white rounded-full font-medium shadow-md hover:bg-[#5a4738] transition"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-md transition hover:bg-primary/90"
             >
               <ArrowRight size={18} />
               Discover My Journey
             </motion.a>
 
-            <div className="flex items-center gap-2 text-gray-600 bg-[#e3e3e3] px-4 py-3 rounded-full text-sm font-medium">
+            <div className="flex items-center gap-2 rounded-full bg-muted px-4 py-3 text-sm font-medium text-muted-foreground">
               <User size={16} />
               Since 2010
             </div>

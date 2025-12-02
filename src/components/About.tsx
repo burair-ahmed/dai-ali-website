@@ -9,32 +9,42 @@ export default function About() {
   return (
     <>
       {/* Header Section */}
-      <section className="w-full pt-10 px-6 lg:px-16 flex flex-col lg:flex-row items-start justify-center gap-10">
+      <section className="flex w-full flex-col items-start justify-center gap-10 px-6 pt-16 lg:flex-row lg:px-16">
         {/* Left Section - Title */}
         <div className="w-full lg:w-1/2 flex flex-col items-start">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-6">
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            About
+          </p>
+          <h2 className="mb-4 text-3xl font-semibold text-foreground sm:text-4xl">
             Meet Dai Ali Daniyal
           </h2>
         </div>
 
         {/* Right Section - Intro */}
         <motion.div
-          className="w-full lg:w-1/2 flex flex-col gap-4 bg-white/50 backdrop-blur-sm p-6 rounded-2xl"
+          className="flex w-full flex-col gap-4 rounded-2xl border border-border bg-card/80 p-6 backdrop-blur-sm lg:w-1/2"
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-sm text-neutral-500 text-right">
+          <p className="text-right text-sm text-muted-foreground">
             Visionary entrepreneur, global thinker, and advocate for sustainable innovation.
           </p>
         </motion.div>
       </section>
 
       {/* Main Section */}
-      <section className="w-full pb-10 px-6 lg:px-16 flex flex-col lg:flex-row items-start justify-center gap-10">
+      <section className="flex w-full flex-col items-start justify-center gap-10 px-6 pb-16 lg:flex-row lg:px-16">
         {/* Left Section - Image */}
         <div className="w-full lg:w-1/2 flex flex-col items-start">
-          <div className="rounded-2xl overflow-hidden shadow-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.5 }}
+            className="overflow-hidden rounded-2xl shadow-md"
+          >
             <Image
               src="/dai-ali-daniyal.webp" // replace with your actual image path
               alt="Dai Ali Daniyal"
@@ -42,17 +52,18 @@ export default function About() {
               height={300}
               className="w-full h-auto object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Section - Info */}
         <motion.div
-          className="w-full lg:w-1/2 flex flex-col gap-4 bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-neutral-200"
+          className="flex w-full flex-col gap-4 rounded-2xl border border-border bg-card/90 p-6 backdrop-blur-sm lg:w-1/2"
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-neutral-700 text-base leading-relaxed">
+          <p className="text-base leading-relaxed text-foreground/90">
             Dai Ali Daniyal, a distinguished figure in business and architecture, leads as the Chief Executive Officer of <strong>Al-Ashraf Group of Companies</strong>. Guided by a legacy of entrepreneurial excellence from his father, <strong>Ashraf Jabbar Qureshi</strong>, he cultivated his business acumen from a young age and grew into a visionary leader known for his innovative approach and strategic foresight.
             <br /><br />
             A graduate of <strong>Middlesex University</strong> in Business Management (Marketing), Dai Ali Daniyal expanded his expertise through a <strong>Master’s in International Business</strong> from <strong>Hult International Business School</strong>, where he gained a global perspective on modern business dynamics. 
@@ -63,7 +74,7 @@ export default function About() {
           {/* Info Cards */}
           <div className="mt-4 flex flex-col gap-4">
             {/* Entrepreneurial Vision */}
-            <Card className="bg-[#ac8968] text-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <Card className="rounded-2xl border border-border bg-primary text-primary-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
               <CardContent className="flex flex-col gap-1 py-4 px-5">
                 <div className="flex items-center gap-2">
                   <BadgeCheck className="w-5 h-5" />
@@ -76,7 +87,7 @@ export default function About() {
             </Card>
 
             {/* Design & Sustainability */}
-            <Card className="bg-[#ac8968] text-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <Card className="rounded-2xl border border-border bg-primary text-primary-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
               <CardContent className="flex flex-col gap-1 py-4 px-5">
                 <div className="flex items-center gap-2">
                   <Building2 className="w-5 h-5" />
@@ -89,7 +100,7 @@ export default function About() {
             </Card>
 
             {/* Global Perspective */}
-            <Card className="bg-[#ac8968] text-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <Card className="rounded-2xl border border-border bg-primary text-primary-foreground shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
               <CardContent className="flex flex-col gap-1 py-4 px-5">
                 <div className="flex items-center gap-2">
                   <Globe2 className="w-5 h-5" />

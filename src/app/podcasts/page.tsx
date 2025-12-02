@@ -93,47 +93,47 @@ export default function PodcastsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(ellipse_at_top_left,_#fbf8f6,_#efe6db)] text-[#2b2118]">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
 
       {/* HERO */}
-      <header className="relative pt-16 pb-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <header className="relative pb-12 pt-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
+            className="grid grid-cols-1 items-center gap-8 md:grid-cols-12"
           >
             <div className="md:col-span-7">
-              <div className="neo-card p-8 md:p-12 rounded-3xl shadow-xl border border-white/8 flex flex-col gap-6">
-                <div className="flex items-center gap-3 mb-2 text-sm text-amber-900/95">
+              <div className="neo-card flex flex-col gap-6 rounded-3xl border border-border bg-card/90 p-8 shadow-xl md:p-12">
+                <div className="mb-2 flex items-center gap-3 text-sm text-muted-foreground">
                   <div className="neo-badge p-2 rounded-full">
                     <Mic size={16} />
                   </div>
                   <span className="font-medium">A Podcast Hosted by Dai Ali Daniyal</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-[#2b2118]">
+                <h1 className="text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-5xl">
                   The Viral Podcast
                 </h1>
 
-                <p className="text-base md:text-lg text-[#3a2c22] opacity-95 max-w-2xl leading-relaxed">
+                <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
                   Conversations on leadership, mindset, business evolution, entrepreneurial clarity, and building lasting influence in a modern world.
                 </p>
 
-                <div className="flex flex-wrap items-center gap-4 mt-2">
+                <div className="mt-2 flex flex-wrap items-center gap-4">
                   <motion.a
                     href="#episodes"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-b from-amber-700 to-amber-900 text-white rounded-full font-semibold shadow-2xl border border-amber-700/40"
+                    className="inline-flex items-center gap-3 rounded-full border border-primary/60 bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-2xl"
                   >
                     <ArrowRight size={18} />
                     Listen to Episodes
                   </motion.a>
 
-                  <div className="flex items-center gap-2 text-sm text-[#3a2c22] bg-white/40 border border-white/6 px-4 py-2 rounded-full">
+                  <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-2 text-sm text-muted-foreground">
                     <Mic size={16} />
                     Inspiring Voices Weekly
                   </div>
@@ -146,9 +146,9 @@ export default function PodcastsPage() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.9 }}
-                className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/4 p-4"
+                className="overflow-hidden rounded-2xl border border-border bg-card/80 p-4 shadow-2xl"
               >
-                <div className="relative rounded-xl overflow-hidden h-72 md:h-80 neon-thumb">
+                <div className="neon-thumb relative h-72 overflow-hidden rounded-xl md:h-80">
                   {featuredVideo ? (
                     <a href={featuredVideo.url} target="_blank" rel="noreferrer" className="block w-full h-full">
                       <Image
@@ -160,10 +160,10 @@ export default function PodcastsPage() {
                       />
                     </a>
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
-                      <div className="text-center p-6">
-                        <h3 className="text-lg font-bold text-amber-900/95 mb-2">The Viral Podcast</h3>
-                        <p className="text-sm text-amber-800/85">Stories of leadership & influence — new episodes weekly</p>
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary/60 to-secondary">
+                      <div className="p-6 text-center">
+                        <h3 className="mb-2 text-lg font-bold text-foreground">The Viral Podcast</h3>
+                        <p className="text-sm text-muted-foreground">Stories of leadership & influence — new episodes weekly</p>
                       </div>
                     </div>
                   )}
@@ -185,9 +185,9 @@ export default function PodcastsPage() {
       {/* FEATURED EPISODE (expanded) */}
       {featuredVideo && (
         <section className="py-12">
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 md:grid-cols-2">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-amber-800/8 neon-card">
+              <div className="neon-card relative overflow-hidden rounded-3xl border border-border bg-card shadow-2xl">
                 <a href={featuredVideo.url} target="_blank" rel="noreferrer">
                   <Image src={featuredVideo.thumbnail} alt={featuredVideo.title} width={1200} height={750} className="object-cover w-full h-full rounded-3xl" />
                 </a>
@@ -195,18 +195,28 @@ export default function PodcastsPage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }}>
-              <h3 className="text-2xl font-bold mb-3 text-amber-900">Featured Episode</h3>
-              <a href={featuredVideo.url} target="_blank" rel="noreferrer" className="text-xl font-semibold text-[#2b2118] mb-4 inline-block">
+              <h3 className="mb-3 text-2xl font-bold text-foreground">Featured Episode</h3>
+              <a href={featuredVideo.url} target="_blank" rel="noreferrer" className="mb-4 inline-block text-xl font-semibold text-foreground">
                 {featuredVideo.title}
               </a>
 
-              <p className="text-[#3a2c22] opacity-95 mb-6 line-clamp-4">{featuredVideo.description}</p>
+              <p className="mb-6 line-clamp-4 text-sm text-muted-foreground md:text-base">
+                {featuredVideo.description}
+              </p>
 
               <div className="flex items-center gap-4">
-                <a href={featuredVideo.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-3 bg-amber-900 text-white rounded-full font-semibold shadow-lg focus:outline-none focus:ring-4 focus:ring-amber-300/30">
+                <a
+                  href={featuredVideo.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 font-semibold text-primary-foreground shadow-lg focus:outline-none focus:ring-4 focus:ring-primary/30"
+                >
                   <Play size={16} /> Listen Now
                 </a>
-                <span className="text-sm text-amber-900/85">{formatDate(featuredVideo.publishedAt)} ● {featuredVideo.duration ? `${Math.ceil(isoToSeconds(featuredVideo.duration) / 60)} min` : "--"}</span>
+                <span className="text-sm text-muted-foreground">
+                  {formatDate(featuredVideo.publishedAt)} ●{" "}
+                  {featuredVideo.duration ? `${Math.ceil(isoToSeconds(featuredVideo.duration) / 60)} min` : "--"}
+                </span>
               </div>
             </motion.div>
           </div>
@@ -215,57 +225,64 @@ export default function PodcastsPage() {
 
       {/* EPISODES GRID */}
       <main id="episodes" className="py-12">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-amber-900">Latest Episodes</h2>
-            <div className="text-sm text-amber-900/80">{filteredVideos.length} episodes</div>
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="text-3xl font-semibold text-foreground">Latest Episodes</h2>
+            <div className="text-sm text-muted-foreground">{filteredVideos.length} episodes</div>
           </div>
 
           {loading ? (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
               {Array.from({ length: 6 }).map((_, i) => (
                 <SkeletonCard key={i} />
               ))}
             </div>
           ) : error ? (
-            <div className="rounded-2xl p-6 bg-white/30 border border-white/8">
-              <p className="text-amber-900 font-medium">Failed to load episodes: {error}</p>
+            <div className="rounded-2xl border border-border bg-card/70 p-6">
+              <p className="font-medium text-foreground">Failed to load episodes: {error}</p>
             </div>
           ) : (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
               {episodesGrid.map((video: any) => (
                 <motion.article
                   key={video.id}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  className="rounded-2xl overflow-hidden bg-gradient-to-br from-white/8 to-white/4 border border-white/8 neo-episode shadow-sm hover:shadow-xl transition-shadow duration-300"
+                  className="neo-episode rounded-2xl border border-border bg-card/80 shadow-sm transition-shadow duration-300 hover:shadow-xl overflow-hidden"
                 >
-                  <div className="relative h-48 w-full rounded-t-2xl overflow-hidden neon-thumb">
+                  <div className="neon-thumb relative h-48 w-full overflow-hidden rounded-t-2xl">
                     <a href={video.url} target="_blank" rel="noreferrer" className="block w-full h-full">
                       <Image src={video.thumbnail} alt={video.title} fill className="object-cover" />
                     </a>
 
-                    <div className="absolute top-3 left-3 bg-black/45 px-3 py-1 rounded-full backdrop-blur-sm text-xs text-white flex items-center gap-2">
+                    <div className="absolute left-3 top-3 flex items-center gap-2 rounded-full bg-black/45 px-3 py-1 text-xs text-white backdrop-blur-sm">
                       <Play size={12} />
                       <span>{video.duration ? `${Math.ceil(isoToSeconds(video.duration) / 60)}m` : "--"}</span>
                     </div>
                   </div>
 
                   <div className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs font-semibold bg-white/20 px-3 py-1 rounded-full border border-white/6 text-amber-900">YouTube</span>
-                      <span className="text-xs text-amber-900/70">{formatDate(video.publishedAt)}</span>
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="rounded-full border border-border bg-secondary/80 px-3 py-1 text-xs font-semibold text-muted-foreground">
+                        YouTube
+                      </span>
+                      <span className="text-xs text-muted-foreground">{formatDate(video.publishedAt)}</span>
                     </div>
 
-                    <h4 className="font-semibold text-lg mb-2 text-[#2b2118] line-clamp-2">
+                    <h4 className="mb-2 line-clamp-2 text-lg font-semibold text-foreground">
                       <a href={video.url} target="_blank" rel="noreferrer" className="hover:underline">{video.title}</a>
                     </h4>
 
-                    <p className="text-sm text-[#3a2c22] opacity-95 mb-4 line-clamp-2">{video.description}</p>
+                    <p className="mb-4 line-clamp-2 text-sm text-muted-foreground">{video.description}</p>
 
                     <div className="flex items-center justify-between">
-                      <div className="text-sm text-amber-900/80">{video.views ? `${video.views} views` : ""}</div>
-                      <a href={video.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-900 text-white font-medium transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-300/25">
+                      <div className="text-sm text-muted-foreground">{video.views ? `${video.views} views` : ""}</div>
+                      <a
+                        href={video.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-medium text-primary-foreground transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary/25"
+                      >
                         <Play size={14} /> Watch
                       </a>
                     </div>
@@ -278,11 +295,21 @@ export default function PodcastsPage() {
       </main>
 
       {/* CTA */}
-      <section className="py-12 bg-gradient-to-r from-amber-900 to-amber-700 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Want to Feature Your Story on The Viral Podcast?</h2>
-          <p className="mb-6 opacity-90">Whether you’re a leader, builder, visionary, or someone with a powerful journey, join Dai Ali Daniyal in conversations that inspire and go viral.</p>
-          <a href="mailto:your-email@domain.com" className="inline-block px-8 py-3 bg-white text-amber-900 rounded-full font-semibold shadow-lg">Request an Interview</a>
+      <section className="bg-primary py-12 text-primary-foreground">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="mb-3 text-3xl font-semibold md:text-4xl">
+            Want to Feature Your Story on The Viral Podcast?
+          </h2>
+          <p className="mb-6 opacity-90">
+            Whether you’re a leader, builder, visionary, or someone with a powerful journey, join Dai Ali Daniyal in
+            conversations that inspire and go viral.
+          </p>
+          <a
+            href="mailto:your-email@domain.com"
+            className="inline-block rounded-full bg-card px-8 py-3 font-semibold text-primary shadow-lg"
+          >
+            Request an Interview
+          </a>
         </div>
       </section>
 

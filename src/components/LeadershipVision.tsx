@@ -58,47 +58,58 @@ export default function LeadershipVision() {
   ];
 
   return (
-    <section className="w-full py-16 px-6 lg:px-20 bg-white">
+    <section className="w-full bg-secondary/40 px-6 py-20 lg:px-20">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-10">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
+      <div className="mb-10 flex flex-col items-start justify-between sm:flex-row sm:items-center">
+        <div>
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            Principles
+          </p>
+          <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">
           Leadership Vision
-        </h2>
-        <p className="text-sm text-neutral-500 mt-2 sm:mt-0">
+          </h2>
+        </div>
+        <p className="mt-4 max-w-md text-sm text-muted-foreground sm:mt-0">
           Core principles that define Dai Ali Daniyal’s leadership and growth philosophy
         </p>
       </div>
 
       {/* Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.08 }}
       >
         {cards.map((card, index) => (
-          <Card
+          <motion.div
             key={index}
-            className="rounded-2xl border border-neutral-200 shadow-sm hover:shadow-md transition-all"
+            variants={{
+              hidden: { opacity: 0, y: 16 },
+              visible: { opacity: 1, y: 0 },
+            }}
           >
-            <CardContent className="px-4">
+            <Card className="rounded-2xl border border-border shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+              <CardContent className="px-4">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-neutral-200 text-neutral-700 rounded-lg px-3 py-2 text-xs font-medium mb-4 w-[100%] border border-neutral-300">
+                <div className="mb-4 inline-flex w-full items-center gap-2 rounded-lg border border-border bg-muted/60 px-3 py-2 text-xs font-medium text-muted-foreground">
                 {card.icon}
                 <span>{card.title}</span>
               </div>
 
               {/* Heading */}
-              <h3 className="text-lg font-semibold text-neutral-900 mb-1">
+                <h3 className="mb-1 text-lg font-semibold text-foreground">
                 {card.heading}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm leading-relaxed text-muted-foreground">
                 {card.description}
               </p>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
       </motion.div>
     </section>
